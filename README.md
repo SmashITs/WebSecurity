@@ -17,6 +17,8 @@ Attack Vectors:
 - Type Confusions
 - DOS
 - Privilege Escalation
+- Session Fixation
+- Weak Cryptography 
 
 Inejctions:
 - HTML Injection (XSS)
