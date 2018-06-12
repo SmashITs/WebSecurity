@@ -1,4 +1,11 @@
-# WebSecurity
+
+# Examples:
+ex1.php : Bypass htmlspecialchars in Javascript context.
+ex2.php : Bypass addslashes in Javascript context.
+
+
+
+# WebSecurity List of Attacks:
 
 Attack Vectors:
 - Execution After Redirect (EAR)
@@ -9,8 +16,6 @@ Attack Vectors:
 - Type Confusions
 - DOS
 - Privilege Escalation
-
-
 
 Inejctions:
 - HTML Injection (XSS)
