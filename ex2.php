@@ -3,12 +3,16 @@
 <head><title>Ex 2: Bypass addslashes in Javascript context.</title></head>
 <body>
 <script>
+var check = 0;
 function solution() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
-		var unescaped_text = atob("PC9zY3JpcHQ+PHNjcmlwdD5hbGVydCgxMzM3KTwvc2NyaXB0Pg==");
-		var text_node = document.createTextNode(unescaped_text);
-		x.appendChild(text_node);
+	    if(check == 0){
+			var unescaped_text = atob("PC9zY3JpcHQ+PHNjcmlwdD5hbGVydCgxMzM3KTwvc2NyaXB0Pg==");
+			var text_node = document.createTextNode(unescaped_text);
+			x.appendChild(text_node);
+			check = check + 1;
+		}
         x.style.display = "block";
     } else {
         x.style.display = "none";
@@ -17,7 +21,7 @@ function solution() {
 </script>
 <?php
 if(isset($_GET['val'])){
-	//The only interesting stuff is in the PHP part.
+//Begin Hackit:****************************************************************
 	if(!empty($_GET['val']) && !is_array($_GET['val'])){
 		$xp = addslashes($_GET['val']);
 		echo "Your input was: ".htmlspecialchars($_GET['val'],ENT_QUOTES,'UTF-8');
@@ -27,6 +31,7 @@ if(isset($_GET['val'])){
 		}
 		</script>';
 	}
+//End Hackit******************************************************************
 }
 else{
 	$actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
