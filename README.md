@@ -4,6 +4,8 @@ ex1.php : Bypass htmlspecialchars in Javascript context.
 
 ex2.php : Bypass addslashes in Javascript context.
 
+ex3.php : Bypass checks for Path Traversal
+
 
 
 # WebSecurity List of Attacks:
